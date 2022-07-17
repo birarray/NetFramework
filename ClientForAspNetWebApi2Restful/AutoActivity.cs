@@ -50,7 +50,7 @@ namespace ClientForAspNetWebApi2Restful
             else
             {
                 //Скрываем кнопку удаления
-                button.Visibility = ViewStates.Gone;
+                buttonDel.Visibility = ViewStates.Gone;
             }
             _client.Timeout = new TimeSpan(0, 0, 300);
         }
@@ -67,9 +67,9 @@ namespace ClientForAspNetWebApi2Restful
                 producedBox.Text = cars[0].produced.ToString();
             }
         }
-        async void save
+        async void save()
         {
-            int_produced = 0;
+            int _produced = 0;
             if (!int.TryParse(producedBox.Text, out _produced)) return;
             if (autoId != Guid.Empty)
             {
@@ -90,7 +90,7 @@ namespace ClientForAspNetWebApi2Restful
         private void goBack()
         {
             // Переход к главной Activity
-            Intent intent = new Intent(this.ToString typeof(MainActivity));
+            Intent intent = new Intent(this, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
             StartActivity(intent);
         }
