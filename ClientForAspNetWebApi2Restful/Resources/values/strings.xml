@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ClientForAspNetWebApi2Restful</string>
+    <string name="action_settings">Settings</string>
+	<string name="btn1">Добавить</string>
+	<string name="model1">Модель</string>
+	<string name="produced1">Год выпуска</string>
+	<string name="model2">Введите модель</string>
+	<string name="produced2">Введите год выпуска</string>
+	<string name="buttonSave1">Сохранить</string>
+	<string name="buttonDel1">Удалить</string>
+</resources>
