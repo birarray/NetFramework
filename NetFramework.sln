@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWebApi2", "AspNetWebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWebApi2Restful", "AspNetWebApi2Restful\AspNetWebApi2Restful.csproj", "{389CAE66-BCA2-4FE0-ADC1-6BFA4EB8C495}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientForAspNetWebApi2", "ClientForAspNetWebApi2\ClientForAspNetWebApi2.csproj", "{C1B1BD53-870C-4E67-B192-AD0759B08948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{389CAE66-BCA2-4FE0-ADC1-6BFA4EB8C495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{389CAE66-BCA2-4FE0-ADC1-6BFA4EB8C495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{389CAE66-BCA2-4FE0-ADC1-6BFA4EB8C495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B1BD53-870C-4E67-B192-AD0759B08948}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

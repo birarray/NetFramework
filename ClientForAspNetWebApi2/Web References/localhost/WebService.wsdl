@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateBaseXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateBaseXMLResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadAllData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="constraint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAllDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadAllDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Produced" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Produced" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateBaseXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBaseXML" />
+  </wsdl:message>
+  <wsdl:message name="CreateBaseXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBaseXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllData" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AddData" />
+  </wsdl:message>
+  <wsdl:message name="AddDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EditData" />
+  </wsdl:message>
+  <wsdl:message name="EditDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="CreateBaseXML">
+      <wsdl:input message="tns:CreateBaseXMLSoapIn" />
+      <wsdl:output message="tns:CreateBaseXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllData">
+      <wsdl:input message="tns:ReadAllDataSoapIn" />
+      <wsdl:output message="tns:ReadAllDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <wsdl:input message="tns:DeleteDataSoapIn" />
+      <wsdl:output message="tns:DeleteDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddData">
+      <wsdl:input message="tns:AddDataSoapIn" />
+      <wsdl:output message="tns:AddDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <wsdl:input message="tns:EditDataSoapIn" />
+      <wsdl:output message="tns:EditDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateBaseXML">
+      <soap:operation soapAction="http://tempuri.org/CreateBaseXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllData">
+      <soap:operation soapAction="http://tempuri.org/ReadAllData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <soap:operation soapAction="http://tempuri.org/DeleteData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddData">
+      <soap:operation soapAction="http://tempuri.org/AddData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <soap:operation soapAction="http://tempuri.org/EditData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateBaseXML">
+      <soap12:operation soapAction="http://tempuri.org/CreateBaseXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllData">
+      <soap12:operation soapAction="http://tempuri.org/ReadAllData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <soap12:operation soapAction="http://tempuri.org/DeleteData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddData">
+      <soap12:operation soapAction="http://tempuri.org/AddData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <soap12:operation soapAction="http://tempuri.org/EditData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://localhost:44345/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://localhost:44345/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
