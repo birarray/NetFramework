@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Support.V7.App;
 using Android.Runtime;
 using AndroidX.AppCompat.App;
 using Android.Widget;
@@ -41,7 +40,7 @@ namespace ClientForAspNetWebApi2Restful
             {
                 Auto selectedCar = (Auto)e.Parent.GetItemAtPosition(e.Position);
                 Intent intent = new Intent(ApplicationContext, typeof(AutoActivity));
-                intent.PutExtra("id", selected.id);
+                intent.PutExtra("id", selectedCar.id);
                 StartActivity(intent);
             };
             _client.Timeout = new TimeSpan(0, 0, 300);
@@ -78,7 +77,7 @@ namespace ClientForAspNetWebApi2Restful
                     {
                         id = m.id,
                         model = m.model,
-                        produced = m.Produced
+                        produced = m.produced
                     }));
                     // Создаем адаптер, передаем в него список
                     var autoAdapter = new AutoAdapter(this, this, Resource.Layout.list_item, cars);
