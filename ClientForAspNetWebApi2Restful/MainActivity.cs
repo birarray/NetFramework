@@ -119,8 +119,8 @@ namespace ClientForAspNetWebApi2Restful
         public override Android.Views.View GetView(int position, Android.Views.View convertView, Android.Views.ViewGroup parent)
         {
             var view = (convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.list_item, parent, false)) as LinearLayout;
-            TextView modelView = view.FindViewById<TextView>(ResourceCursorAdapter.Id.model);
-            TextView producedView = view.FindViewById<TextView>(ResourceCursorAdapter.Id.produced);
+            TextView modelView = view.FindViewById<TextView>(Resource.Id.model);
+            TextView producedView = view.FindViewById<TextView>(Resource.Id.produced);
             var item = (Auto)this.GetItem(position);
             modelView.Text = item.model;
             producedView.Text = item.produced.ToString();
